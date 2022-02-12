@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momcorp Robot Factory</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
+    <style>
+        body.debug .container,
+        body.debug .container-fluid {
+            outline: 2px double blue;
+            outline-offset: -2px;
+        }
+
+        body.debug .row {
+            outline: 2px dashed red;
+            outline-offset: -2px;
+        }
+
+        body.debug [class*="col-"] {
+            outline: 2px dotted forestgreen;
+            outline-offset: -3px;
+        }
+    </style>
+    <link href="http://fonts.cdnfonts.com/css/futurama" rel="stylesheet">
+
+</head>
+
+<body class="debug">
+    <!-- //ANCHOR: Momcorp banner  -->
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-12 bg-light p-3">
+                <img class="rounded mx-auto d-flex"
+                    src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/8afd9815296625.5628f44db227e.png"
+                    alt="">
+            </div>
+        </div>
+    </header>
+
+    <main class="debug container-fluid justify-content-center">
+        <div class="row">
+            <!-- //ANCHOR: Store will go in first column -->
+            <div class="col-12 col-md-4">Location of store <button onclick="buyMomsOldFashionedRobotOil()">Buy Robot
+                    Oil</button></div>
+            <div class="col-12 col-md-4"><button onclick="buyMechanizedArms()">Buy Mechanized Arms </button></div>
+            <div class="col-12 col-md-4"><button onclick="buyPlanetExpressDelivery()">Planet Express Delivery</button>
+            </div>
+            <div class="col-12 col-md-4"><button onclick="buyRobot1X()">Buy Robot 1X</button></div>
+            <!-- //ANCHOR: Clickable Bender image goes into this column  -->
+            <div class="col-12 col-md-4">
+                <img id="Bender-ID" class="img-fluid"
+                    src="https://toppng.com/uploads/preview/bender-robot-in-futurama-11563572794ok4yv6vx9d.png"
+                    alt="Bender" onclick="mineRobots()">
+
+            </div>
+            <!-- //ANCHOR: This will contain the inventory and stats  -->
+            <div class="col-12 col-md-4">
+                <div class="row">
+                    <!-- //ANCHOR: inventory goes here  -->
+                    <div class="col-12">
+                        <h1 class="futurama">Inventory</h1>
+                    </div>
+                    <!-- Stats will go below -->
+                    <div class="col-12">Stats</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class="container-fluid"></footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
