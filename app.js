@@ -44,6 +44,21 @@ function buyMechanicalArms() {
     }
 }
 
+function buyPlanetExpressDelivery() {
+    if (robots >= clickUpgrades.planetExpressDelivery.Cost) {
+        clickUpgrades.planetExpressDelivery.Quantity++
+        console.log("Working")
+    }
+}
+
+function buyRobot1X() {
+    if (robots >= clickUpgrades.Robot1X.Cost) {
+        clickUpgrades.Robot1X.Quantity++
+        console.log("Working")
+    }
+}
+
+
 
 
 function mineRobots() {
