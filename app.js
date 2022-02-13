@@ -61,6 +61,10 @@ function buyRobot1X() {
 function updateResource() {
     let updateResource = document.querySelector('.updateResource');
     updateResource.innerHTML = robots
+    let updateOil = document.querySelector('.updateOil');
+    let updateArms = document.querySelector('.updateArms');
+    let updateDelivery = document.querySelector('.updateDelivery');
+    let updateRobot1X = document.querySelector('.updateRobot1X');
 }
 
 
