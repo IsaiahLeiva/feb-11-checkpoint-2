@@ -84,6 +84,7 @@ function updateResource() {
 
 
 function mineRobots() {
+    debugger;
     robots++
     console.log(robots)
     updateResource();
