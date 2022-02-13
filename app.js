@@ -54,6 +54,7 @@ function buyPlanetExpressDelivery() {
         clickUpgrades.planetExpressDelivery.Quantity++;
         robots -= clickUpgrades.planetExpressDelivery.Cost;
         clickUpgrades.planetExpressDelivery.Cost++;
+        updateResource();
         // console.log("Working")
     }
 }
@@ -63,6 +64,7 @@ function buyRobot1X() {
         clickUpgrades.Robot1X.Quantity++;
         robots -= clickUpgrades.Robot1X.Cost;
         clickUpgrades.Robot1X.Cost++;
+        updateResource();
         // console.log("Working")
     }
 }
@@ -73,11 +75,11 @@ function updateResource() {
     let updateOil = document.querySelector('.updateOil');
     updateOil.innerHTML = clickUpgrades.MomsOldFashionedRobotOil.Quantity;
     let updateArms = document.querySelector('.updateArms');
-
+    updateArms.innerHTML = clickUpgrades.MechanicalArms.Quantity;
     let updateDelivery = document.querySelector('.updateDelivery');
-
+    updateDelivery.innerHTML = clickUpgrades.updateDelivery.Quantity;
     let updateRobot1X = document.querySelector('.updateRobot1X');
-
+    updateDelivery.innerHTML = clickUpgrades.updateRobot1X.Quantity;
 }
 
 
