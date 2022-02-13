@@ -91,8 +91,10 @@ function mineRobots() {
 }
 
 
+//ANCHOR: Still stuck on how to get these to work:
 
-const deliveryVar = setInterval(function () { robots += automaticUpgrades.planetExpressDelivery.Multiplier }, 3000)
 
-const robot1XVar = setInterval(function () { robots += automaticUpgrades.Robot1X.Multiplier }, 3000)
+// const deliveryVar = setInterval(function () { robots += automaticUpgrades.planetExpressDelivery.Multiplier }, 3000)
+
+// const robot1XVar = setInterval(function () { robots += automaticUpgrades.Robot1X.Multiplier }, 3000)
 
