@@ -44,7 +44,8 @@ function buyMechanicalArms() {
     if (robots >= clickUpgrades.MechanicalArms.Cost) {
         clickUpgrades.MechanicalArms.Quantity++;
         robots -= clickUpgrades.MechanicalArms.Cost;
-        clickUpgrades.MechanicalArms.Cost++;
+        clickUpgrades.MechanicalArms.Cost += 10;
+        document.querySelector('.updateArmsCost').innerHTML = clickUpgrades.MechanicalArms.Cost;
         updateResource();
     }
 }
@@ -53,7 +54,8 @@ function buyPlanetExpressDelivery() {
     if (robots >= automaticUpgrades.planetExpressDelivery.Cost) {
         automaticUpgrades.planetExpressDelivery.Quantity++;
         robots -= automaticUpgrades.planetExpressDelivery.Cost;
-        automaticUpgrades.planetExpressDelivery.Cost++;
+        automaticUpgrades.planetExpressDelivery.Cost += 30;
+        document.querySelector('.updateDeliveryCost').innerHTML = clickUpgrades.planetExpressDelivery.Cost;
         deliveryVar();
         updateResource();
     }
@@ -64,6 +66,7 @@ function buyRobot1X() {
         automaticUpgrades.Robot1X.Quantity++;
         robots -= automaticUpgrades.Robot1X.Cost;
         automaticUpgrades.Robot1X.Cost++;
+        document.querySelector('.updateRobot1X').innerHTML = clickUpgrades.Robot1X.Cost;
         robot1XVar();
         updateResource();
     }
@@ -84,7 +87,6 @@ function updateResource() {
 
 
 function mineRobots() {
-    debugger;
     robots++
     console.log(robots)
     updateResource();
