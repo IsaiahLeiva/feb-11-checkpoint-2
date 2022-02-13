@@ -58,11 +58,15 @@ function buyRobot1X() {
     }
 }
 
-
+function updateResource() {
+    let updateResource = document.querySelector('.updateResource');
+    updateResource.innerHTML = robots
+}
 
 
 function mineRobots() {
     robots++
     console.log(robots)
+    updateResource();
 }
 
