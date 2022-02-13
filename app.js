@@ -54,6 +54,7 @@ function buyPlanetExpressDelivery() {
         automaticUpgrades.planetExpressDelivery.Quantity++;
         robots -= automaticUpgrades.planetExpressDelivery.Cost;
         automaticUpgrades.planetExpressDelivery.Cost++;
+        deliveryVar();
         updateResource();
     }
 }
@@ -63,6 +64,7 @@ function buyRobot1X() {
         automaticUpgrades.Robot1X.Quantity++;
         robots -= automaticUpgrades.Robot1X.Cost;
         automaticUpgrades.Robot1X.Cost++;
+        robot1XVar();
         updateResource();
     }
 }
@@ -87,12 +89,9 @@ function mineRobots() {
     updateResource();
 }
 
-function autoUpgradeRun(upgradeName) {
-    if (upgradeName === 'delivery') {
-        robots += automaticUpgrades.planetExpressDelivery.Multiplier;
-    } else if (upgradeName === 'robot1X') {
-        robots += automaticUpgrades.Robot1X.Multiplier;
-    }
-}
 
-setInterval(autoUpgradeRun, 3000) 
+
+const deliveryVar = setInterval(function () { robots += automaticUpgrades.planetExpressDelivery.Multiplier }, 3000)
+
+const robot1XVar = setInterval(function () { robots += automaticUpgrades.Robot1X.Multiplier }, 3000)
+
