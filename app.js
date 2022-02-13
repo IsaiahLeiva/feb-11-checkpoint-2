@@ -2,7 +2,7 @@ let robots = 0;
 
 let clickUpgrades = {
     MomsOldFashionedRobotOil: {
-        Cost: 10,
+        Cost: 5,
         Quantity: 0,
         Multiplier: 15,
     },
@@ -34,7 +34,8 @@ function buyMomsOldFashionedRobotOil() {
     if (robots >= clickUpgrades.MomsOldFashionedRobotOil.Cost) {
         clickUpgrades.MomsOldFashionedRobotOil.Quantity++;
         robots -= clickUpgrades.MomsOldFashionedRobotOil.Cost;
-        clickUpgrades.MomsOldFashionedRobotOil.Cost++;
+        clickUpgrades.MomsOldFashionedRobotOil.Cost += 5;
+        document.querySelector('.updateOilCost').innerHTML = clickUpgrades.MomsOldFashionedRobotOil.Cost;
         updateResource();
     }
 }
@@ -45,27 +46,24 @@ function buyMechanicalArms() {
         robots -= clickUpgrades.MechanicalArms.Cost;
         clickUpgrades.MechanicalArms.Cost++;
         updateResource();
-        // console.log("Working")
     }
 }
 
 function buyPlanetExpressDelivery() {
-    if (robots >= clickUpgrades.planetExpressDelivery.Cost) {
-        clickUpgrades.planetExpressDelivery.Quantity++;
-        robots -= clickUpgrades.planetExpressDelivery.Cost;
-        clickUpgrades.planetExpressDelivery.Cost++;
+    if (robots >= automaticUpgrades.planetExpressDelivery.Cost) {
+        automaticUpgrades.planetExpressDelivery.Quantity++;
+        robots -= automaticUpgrades.planetExpressDelivery.Cost;
+        automaticUpgrades.planetExpressDelivery.Cost++;
         updateResource();
-        // console.log("Working")
     }
 }
 
 function buyRobot1X() {
-    if (robots >= clickUpgrades.Robot1X.Cost) {
-        clickUpgrades.Robot1X.Quantity++;
-        robots -= clickUpgrades.Robot1X.Cost;
-        clickUpgrades.Robot1X.Cost++;
+    if (robots >= automaticUpgrades.Robot1X.Cost) {
+        automaticUpgrades.Robot1X.Quantity++;
+        robots -= automaticUpgrades.Robot1X.Cost;
+        automaticUpgrades.Robot1X.Cost++;
         updateResource();
-        // console.log("Working")
     }
 }
 
@@ -77,9 +75,9 @@ function updateResource() {
     let updateArms = document.querySelector('.updateArms');
     updateArms.innerHTML = clickUpgrades.MechanicalArms.Quantity;
     let updateDelivery = document.querySelector('.updateDelivery');
-    updateDelivery.innerHTML = clickUpgrades.Delivery.Quantity;
+    updateDelivery.innerHTML = automaticUpgrades.planetExpressDelivery.Quantity;
     let updateRobot1X = document.querySelector('.updateRobot1X');
-    updateRobot1X.innerHTML = clickUpgrades.Robot1X.Quantity;
+    updateRobot1X.innerHTML = automaticUpgrades.Robot1X.Quantity;
 }
 
 
@@ -89,3 +87,12 @@ function mineRobots() {
     updateResource();
 }
 
+function autoUpgradeRun(upgradeName) {
+    if (upgradeName === 'delivery') {
+        robots += automaticUpgrades.planetExpressDelivery.Multiplier;
+    } else if (upgradeName === 'robot1X') {
+        robots += automaticUpgrades.Robot1X.Multiplier;
+    }
+}
+
+setInterval(autoUpgradeRun, 3000) 
