@@ -35,6 +35,7 @@ function buyMomsOldFashionedRobotOil() {
         clickUpgrades.MomsOldFashionedRobotOil.Quantity++;
         robots -= clickUpgrades.MomsOldFashionedRobotOil.Cost;
         clickUpgrades.MomsOldFashionedRobotOil.Cost += 5;
+        //NOTE: Cost goes up for the oil but of course not for the others
         document.querySelector('.updateOilCost').innerHTML = clickUpgrades.MomsOldFashionedRobotOil.Cost;
         updateResource();
     }
