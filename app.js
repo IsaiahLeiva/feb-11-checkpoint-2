@@ -56,8 +56,8 @@ function buyPlanetExpressDelivery() {
         automaticUpgrades.planetExpressDelivery.Quantity++;
         robots -= automaticUpgrades.planetExpressDelivery.Cost;
         automaticUpgrades.planetExpressDelivery.Cost += 30;
-        document.querySelector('.updateDeliveryCost').innerHTML = clickUpgrades.planetExpressDelivery.Cost;
-        deliveryVar();
+        document.querySelector('.updateDeliveryCost').innerHTML = automaticUpgrades.planetExpressDelivery.Cost;
+        // deliveryVar();
         updateResource();
     }
 }
@@ -67,7 +67,7 @@ function buyRobot1X() {
         automaticUpgrades.Robot1X.Quantity++;
         robots -= automaticUpgrades.Robot1X.Cost;
         automaticUpgrades.Robot1X.Cost++;
-        document.querySelector('.updateRobot1X').innerHTML = clickUpgrades.Robot1X.Cost;
+        document.querySelector('.updateRobot1X').innerHTML = automaticUpgrades.Robot1X.Cost;
         robot1XVar();
         updateResource();
     }
@@ -93,11 +93,15 @@ function mineRobots() {
     updateResource();
 }
 
+// TODO write a function that itterates over clickUpgrades and adds to the total robots, for every quantity * multiplier, then have your mine robots function call this function,
+// this will need a for in loop
+// TODO need to draw to the page somewhere this value that will get calculated so we can see the total ammount of modification each upgrade provides
+
 
 //ANCHOR: Still stuck on how to get these to work:
+// TODO write a funtion that takes does what these intervals do AND draws to the page, then you can just have one interval with the instructions of the function you just wrote
 
+const deliveryVar = setInterval(function () { robots += automaticUpgrades.planetExpressDelivery.Multiplier * automaticUpgrades.planetExpressDelivery.Quantity }, 3000)
 
-// const deliveryVar = setInterval(function () { robots += automaticUpgrades.planetExpressDelivery.Multiplier }, 3000)
-
-// const robot1XVar = setInterval(function () { robots += automaticUpgrades.Robot1X.Multiplier }, 3000)
+const robot1XVar = setInterval(function () { robots += automaticUpgrades.Robot1X.Multiplier * automaticUpgrades.Robot1X.Quantity }, 3000)
 
